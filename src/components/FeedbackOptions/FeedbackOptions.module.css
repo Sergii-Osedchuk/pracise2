@@ -1,0 +1,18 @@
+.name {
+    color:gray;
+}
+
+.mark {
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    color:blueviolet;
+    font-weight: 500;
+}
+
+.mark:not(:last-child) {
+    margin-right: 20px;
+}
+

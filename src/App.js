@@ -1,8 +1,7 @@
-import './App.css';
+import s from './App.module.css';
 import { useState } from 'react';
 import Statistics from './components/Statistics/Statistics';
 import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
-import Notification from './components/Notification/Notification';
 
 function App() {
   let [good, setGood] = useState(0);
@@ -29,23 +28,20 @@ function App() {
 
 
   return (
-    <>
+    <div className={s.app}>
       <FeedbackOptions 
         goodIncrement={handleGood} 
         neutralIncrement={handleNeutral} 
         badIncrement={handleBad}
       />
-      {total ? 
-        <Statistics 
-          good={good} 
-          bad={bad} 
-          neutral={neutral} 
-          total = {countTotalFeedback(good, bad, neutral)} 
-          positive = {total ? countPositiveFeedback(good, bad, neutral) : 0}
-        /> : 
-        <Notification message = 'There is no feedback' />
-      }
-    </>
+      <Statistics 
+        good={good} 
+        bad={bad} 
+        neutral={neutral} 
+        total = {countTotalFeedback(good, bad, neutral)} 
+        positive = {total ? countPositiveFeedback(good, bad, neutral) : 0}
+      />
+    </div>
   );
 }
 

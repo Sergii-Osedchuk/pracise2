@@ -1,9 +1,8 @@
 function Notification ({message}) {
     return (
-        <>
-          <h2>Statistics</h2>
-          <h3>{message}</h3>
-        </>
+        <div>
+          <h3 style={{color:'gray', size: '10px'}}>{message}</h3>
+        </div>
     )
 }
 
